@@ -73,7 +73,7 @@
     getShorua();
     function getShorua() 
     {
-        fetch("http://api.alquran.cloud/v1/meta")
+        fetch('https://api.alquran.cloud/v1/meta')
         .then(Response => Response.json())
         .then(data=>{
             let surahs = data.data.surahs.references
@@ -93,7 +93,7 @@
                 AyatContainer = document.querySelector('.ayat');
             SurahsTitels.forEach((title,index)=>{
                 title.addEventListener('click',()=>{
-                    fetch(`http://api.alquran.cloud/v1/surah/${index +1}`)
+                    fetch(`https://api.alquran.cloud/v1/surah/${index +1}`)
                     .then(Response => Response.json())
                     .then(data=>{
                         AyatContainer.innerHTML = "";
@@ -119,7 +119,7 @@
     let Cards = document.querySelector('.cards')
     getPrayTimes();
     function getPrayTimes() {
-        fetch ("http://api.aladhan.com/v1/timingsByCity?city=cairo&country=egypt&method=8")
+        fetch ('https://api.aladhan.com/v1/timingsByCity?city=cairo&country=egypt&method=8')
         .then(Response => Response.json())
         .then(data => {
             let times = data.data.timings;
